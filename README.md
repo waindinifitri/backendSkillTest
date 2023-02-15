@@ -13,7 +13,7 @@ temperature.
 
 That's all there is to this project! (You can ignore the other files in the repository, we'll get back to them in episode 4)
 
-**The exercise**
+**How to Install and Run the Project**
 
 1. Fork the [the example project](https://github.com/escience-academy/coderefinery-documentation-example-project) to your own github namespace
 2. Add a file called `README.md` (you can use the github web interface or work locally (i.e. `git clone`, edit the file,  `git add`, `git commit`, `git push`))
@@ -24,8 +24,8 @@ That's all there is to this project! (You can ignore the other files in the repo
 NB: The `README.md` file is written in 'Markdown' a very popular lightweight markup language, all you need to know for now is this syntax:
 
 ```markdown
-# A section title
-## A subsection title
+
+***Tech Stack***
 Normal text
 
 A list with items
