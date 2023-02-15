@@ -14,7 +14,7 @@ const authentication = (req, res, next) => {
     try {
       const decode = tokenVerifier(access_token);
 
-      req.usersData = decode;
+      req.studentsData = decode;
       next();
     } catch (err) {
       res.status(400).json(err);
@@ -25,7 +25,7 @@ const authentication = (req, res, next) => {
   const authorization = (req, res, next) => {
   console.log("Authorization works!");
    
-  let role = req.usersData.role;
+  let role = req.studentsData.role;
 
   if (role === "Admin Staff" ) {
     next();
