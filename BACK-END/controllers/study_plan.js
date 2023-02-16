@@ -1,5 +1,5 @@
 const { student, subject} = require('../models')
-const study_plan = require('../models/study_plan')
+const study_plan = require('../models/study_plans')
 
 class studyPlanController {
     static async addStudyPlan(req,res, next) {
