@@ -27,9 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     image: {
     type : DataTypes.STRING,
       validate : {
-        notEmpty : {
-          msg : "Upload your photo here!"
-        },
         default : "https://res.cloudinary.com/di02ey9t7/image/upload/v1602432289/FAVPNG_samsung-galaxy-a8-a8-user-login-telephone-avatar_peutPpGD_l18hzf.png"
       }
     },

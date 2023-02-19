@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     total_sks: {
       type : DataTypes.STRING,
       validate : {
+        isNumeric: true,
         notEmpty : {
           msg : "Your total sks number, please?"
         }

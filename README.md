@@ -1,36 +1,42 @@
 **A Study Plan**
 
-Here's [the example project](https://github.com/escience-academy/coderefinery-documentation-example-project).
-For this project we transformed the code snippets from the previous episode into a single script [analyse_spreadsheet.py](https://github.com/escience-academy/coderefinery-documentation-example-project/blob/main/analyse_spreadsheet.py)
+Here's the brief introduction about this backend-skill-test that held by MCM teams, to create API of "Rencana Studi Mahasiswa", that include 3 tables, there were:
+1. Mahasiswa (Student)
+2. Mata Kuliah (Subject)
+3. Rencana Studi (Study Plan)
 
-Let's take a look at [the script](https://github.com/escience-academy/coderefinery-documentation-example-project/blob/main/analyse_spreadsheet.py).
-You don't need to understand the script completely, all you need to know is:
-* The functions `mean_temperature` and `get_spreadsheet_columns` from previous episode are in there.
-* We added a `main` function that is called when you run the script
-(you could run this python script by calling `python analyse_spreadsheet.py` on the command line).
-It will prompt the user for a file name, print the columns in the spreadsheet, and print the mean
-temperature.
+with several condition, as:
+1. Input validation
+   a. Student Table
+      - notEmpty on name input validation 
+      - validation on image input, follows as a default image if user didnt upload any of them
+      - notEmpty and isEmail format on email input validation
+      - validation on password input for notEmpty and RegularExperession of "Minimum eight characters, at least one letter and one number" combination
+      -default value of Student role
+      -hooks validation for encrypted users data after registered
+   b. Subject Table
+      - notEmpty on subject_name input validation 
+      - isNumeric and notEmpty on sks_number validation 
+      - notEmpty on subject code input validation
+      - notEmpty on lecture name input validation 
+   c.  Study Plan Table
+      - isNumeric and notEmpty on total_sks (well its actually better if automatically calculated) validation
+      - notEmpty on supervisor input validation
+2. 1 Student having 3 maximum for taking the subjects
+3. 1 Subject having 4 maxium students
+well, i believe i can do much better than this on my code actually, pardon me.
 
-That's all there is to this project! (You can ignore the other files in the repository, we'll get back to them in episode 4)
+**The Tech Stack**
+1. Javascript,
+2. Nodejs, 
+3. Express,
+4. Validator JS,
+5. Sequelize,
+6. Mysql Database,
+7. Multer, using cloudinary for cloud storage [coludinary.com](https://cloudinary.com/)
 
 **How to Install and Run the Project**
-
-1. Fork the [the example project](https://github.com/escience-academy/coderefinery-documentation-example-project) to your own github namespace
-2. Add a file called `README.md` (you can use the github web interface or work locally (i.e. `git clone`, edit the file,  `git add`, `git commit`, `git push`))
-3. Add some content to your README file. Think about what you want the audience to know about your project!
-   It does not matter whether the information is correct, it is more important that you have all the components that make up a good README file.
-4. Note that the README file is nicely rendered on the github repository page.
-5. Compare your README file with that of others, is all the essential information in there?
-NB: The `README.md` file is written in 'Markdown' a very popular lightweight markup language, all you need to know for now is this syntax:
-
-```markdown
-
-***Tech Stack***
-Normal text
-
-A list with items
-- item1
-- item2
-```
-
-(Optional): Use [https://hemingwayapp.com/](https://hemingwayapp.com/) to analyse your README file and make your writing bold and clear!
+1. Make sure you already cloned the project to yours
+2. Make sure you already install [mySql](https://www.mysql.com/downloads/) database and setup the credentials
+3. Install the dependencies with ($npm i) command
+4. run project with ($npm run start) command
