@@ -12,7 +12,17 @@ class subjectController {
                 }
             })
             if (result) {
-                res.status(409).json({msg: 'subject already exists.'})    
+                res.status(409).json({msg: 'subject already exists.'})
+            const found = await study_plan.findOne({
+                    where: {
+                        studentId : studentId
+                    }
+                }) 
+            if (found.length += 4) {
+                    res.status(409).json({
+                        msg: "This subject was full capacity!"
+                    })
+                }    
             } else {
                 const newSubject = await subject.create({
                     subject_name, 

@@ -25,6 +25,16 @@ class studyPlanController {
                     studentId 
                 });
             }   res.status(201).json({msg : "Good luck for your study_plan!"})
+            const addSubject = await study_plan.findOne({
+                where: {
+                    subjectId : subjectId
+                }
+            }) 
+        if (addSubject.length += 3) {
+                res.status(409).json({
+                    msg: "You already had 3 subjects on you study plan!"
+                })
+            }    
         } catch (error) {
             next(error)
         }
