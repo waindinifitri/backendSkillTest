@@ -37,7 +37,7 @@ well, i believe i can do much better on the last two point on my code, I should 
 4. Validator JS,
 5. Sequelize,
 6. Mysql Database,
-7. Multer, using cloudinary for cloud storage [coludinary.com](https://cloudinary.com/)
+7. Multer, using cloudinary for cloud storage [cloudinary.com](https://cloudinary.com/)
 
 **How to Install and Run the Project**
 1. Make sure you already cloned the project to yours
