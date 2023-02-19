@@ -9,25 +9,26 @@ with several condition, as:
 1. Input validation
 
    a. Student Table
-      - notEmpty on name input validation 
-      - validation on image input, follows as a default image if user didnt upload any of them
-      - notEmpty and isEmail format on email input validation
-      - validation on password input for notEmpty and RegularExperession of "Minimum eight characters, at least one letter and one number" combination
-      -default value of Student role
+      - notEmpty on name input validation,
+      - validation on image input, follows as a default image if user didnt upload any of them,
+      - notEmpty and isEmail format on email input validation,
+      - validation on password input for notEmpty and RegularExperession of "Minimum eight characters, at least one letter and one number" combination,
+      -default value of Student role,
       -hooks validation for encrypted users data after registered
 
    b. Subject Table
-      - notEmpty on subject_name input validation 
-      - isNumeric and notEmpty on sks_number validation 
-      - notEmpty on subject code input validation
+      - notEmpty on subject_name input validation,
+      - isNumeric and notEmpty on sks_number validation, 
+      - notEmpty on subject code input validation,
       - notEmpty on lecture name input validation
 
    c.  Study Plan Table
-      - isNumeric and notEmpty on total_sks (well its actually better if automatically calculated) validation
-      - notEmpty on supervisor input validation
-2. 1 Student having 3 maximum for taking the subjects
-3. 1 Subject having 4 maxium students
-well, i believe i can do much better than this on my code actually, pardon me.
+      - isNumeric and notEmpty on total_sks (well its actually better if automatically calculated) validation,
+      - notEmpty on supervisor input validation,
+2. 1 Student having 3 maximum for taking the subjects,
+3. 1 Subject having 4 maxium students,
+
+well, i believe i can do much better on the last two point on my code, I should learn more, pardon me.
 
 **The Tech Stack**
 1. Javascript,
@@ -44,7 +45,9 @@ well, i believe i can do much better than this on my code actually, pardon me.
 3. Install the dependencies with ($npm i) command
 4. run project with ($npm run start) command
 
+
 **API Documentation**
+
 Status Code Response
 ```
 200 - OK                      > Call API success
@@ -108,7 +111,7 @@ Response: (500 - Internal Server Error){
 ```
 
 ## POST ({localhost})/student/register : 
-Register User
+Register Student
 ```json
 Request Header : not needed
 ```
@@ -116,7 +119,7 @@ Request Header : not needed
 Request Body: {
   "name": "<student name>",
   "email": "<student email>",
-  "password": "<user password>"
+  "password": "<student password>"
 }
 ```
 ```json
@@ -244,7 +247,7 @@ Response: (500 - Internal Server Error){
 }
 ```
  
-## GetUserId ({localhost})/student/:id : 
+## GetStudentId ({localhost})/student/:id : 
 GetStudent By Id
 ```json
 
