@@ -43,3 +43,236 @@ well, i believe i can do much better than this on my code actually, pardon me.
 2. Make sure you already install [mySql](https://www.mysql.com/downloads/) database and setup the credentials
 3. Install the dependencies with ($npm i) command
 4. run project with ($npm run start) command
+
+**API Documentation**
+Status Code Response
+```
+200 - OK                      > Call API success
+201 - CREATED                 > Post success
+202 - ACCEPTED                > Response/Post success
+400 - BAD REQUEST             > Error on client side
+404 - NOT FOUND               > Req.bodyrequest endpoint not found
+409 - CONFLICT                > User not fill the requirement
+500 - INTERNAL SERVER ERROR   > Error on server side
+```
+
+An Example of API Documentation of Student Tabble
+
+**Student API**
+
+## GET ({localhost})/ : 
+Homepage
+```json
+Request Header : not needed
+```
+```json
+
+Request Body: not needed
+```
+```json
+
+Response: (200 - OK) {
+    "message": "This is home page thanks."
+}
+```
+```json
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```
+
+## GET ({localhost})/student/list : 
+Get All Student
+```json
+Request Header {
+    "token" : "<your token">
+}
+```
+```json
+
+Request Body: not needed
+```
+```json
+
+Response: (200 - OK){
+  success: true,
+	message: "See all the list of student!",
+	data: "<student data>"
+
+}
+```
+```json
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```
+
+## POST ({localhost})/student/register : 
+Register User
+```json
+Request Header : not needed
+```
+```json
+Request Body: {
+  "name": "<student name>",
+  "email": "<student email>",
+  "password": "<user password>"
+}
+```
+```json
+Response: (201 - Created){
+  {
+    "success": true,
+    "message": "Success!",
+    "data": {
+        "image": "https://res.cloudinary.com/di02ey9t7/image/upload/v1602432289/FAVPNG_samsung-galaxy-a8-a8-user-login-telephone-avatar_peutPpGD_l18hzf.png",
+        "role": "Student",
+        "_id": "<studentId>",
+        "name": "<student name>",
+        "email": "<student email>",
+        "password": "<student password that already hashed>",
+        "__v": 0,
+        "createdAt": "<student time create>"
+    }
+  } 
+}
+```
+```json
+
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```
+
+## POST ({localhost})/student/login :
+Student Login
+```json
+Request Header : {
+ not needed
+}
+```
+```json
+Request Body: {
+  "email": "<student email>",
+  "password": "<student password>"
+}
+```
+```json
+Response: (200 - OK){
+  success: true,
+	message: "Success!",
+	token: "<your token>"
+}
+```
+```json
+
+Response: (500 - Internal Server Error){
+  "success" : false,
+  "<Error Message>"
+}
+```
+
+## PUT ({localhost})/student/edit/:id : 
+Edit Students
+```json
+
+Request Header : {
+  "access_token": "<your access token>"
+}
+```
+```json
+
+Request Body: {
+  "name": "<student name>", 
+  "image" : "<student image link>",
+}
+```
+```json
+
+Response: (200 - OK){
+  {
+    "success": true,
+    "message": "Profile has been updated!",
+    "data": {
+        "image": "https://res.cloudinary.com/di02ey9t7/image/upload/v1602432289/FAVPNG_samsung-galaxy-a8-a8-user-login-telephone-avatar_peutPpGD_l18hzf.png",
+        "_id": "<studentId>",
+        "name": "<student name>",
+        "__v": 0,
+        "updatedAt": "<student time update>"
+    }
+  } 
+}
+}
+```
+```json
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```
+ 
+## DELETE ({localhost})/student/delete/:id : 
+Delete Student
+```json
+
+Request Header : {
+  "token": "<your token">
+}
+```
+```json
+
+Request Body: not needed
+```
+```json
+
+Response: (200 - OK){
+  {
+    "success": true,
+    "message": "Student has been deleted",
+    "data": {
+        "image": "https://res.cloudinary.com/di02ey9t7/image/upload/v1602432289/FAVPNG_samsung-galaxy-a8-a8-user-login-telephone-avatar_peutPpGD_l18hzf.png",
+        "role": "Student",
+        "_id": "<studentId>",
+        "name": "<student name>",
+        "email": "<student email>",
+        "__v": 0,
+        "deletedAt": "<student time deleted>"
+}
+```
+```json
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```
+ 
+## GetUserId ({localhost})/student/:id : 
+GetStudent By Id
+```json
+
+Request Header : {
+  "token": "<your token">
+}
+```
+```json
+
+Request Body: not needed
+```
+```json
+
+Response: (200 - OK){
+     "data": {
+        "image": "https://res.cloudinary.com/di02ey9t7/image/upload/v1602432289/FAVPNG_samsung-galaxy-a8-a8-user-login-telephone-avatar_peutPpGD_l18hzf.png",
+        "role": "Student",
+        "_id": "5f8ad3f14534ab053414b586",
+        "name": "Waindini Nur Fitri",
+        "email": "waindini@gmail.com",
+        "password": "$2b$10$nsKb5YKYsRiFaPZdNGY6SeXG8USCapztMDsoB4Px260MAsUj9uule",
+        "createdAt": "2023-02-15T11:22:25.426Z",
+        "updatedAt": "2023-02-15T11:22:25.426Z",
+    }
+}
+```
+```json
+Response: (500 - Internal Server Error){
+  "<Error Message>"
+}
+```

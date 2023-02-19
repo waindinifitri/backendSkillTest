@@ -75,7 +75,7 @@ class studentController {
 	}
     static async updateProfile(req, res) { 
 		const id = req.params.id;
-		const { name, email, password } = req.body;
+		const { name } = req.body;
 		const image = req.file.path
 		try {
 			const found = await student.findOne({ 
@@ -85,8 +85,6 @@ class studentController {
 				student.update({
                     name,
 					image,
-                    email,
-					password
 				}, {
 					where: { id },
 					}
