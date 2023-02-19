@@ -7,6 +7,7 @@ Here's the brief introduction about this backend-skill-test that held by MCM tea
 
 with several condition, as:
 1. Input validation
+
    a. Student Table
       - notEmpty on name input validation 
       - validation on image input, follows as a default image if user didnt upload any of them
@@ -14,11 +15,13 @@ with several condition, as:
       - validation on password input for notEmpty and RegularExperession of "Minimum eight characters, at least one letter and one number" combination
       -default value of Student role
       -hooks validation for encrypted users data after registered
+
    b. Subject Table
       - notEmpty on subject_name input validation 
       - isNumeric and notEmpty on sks_number validation 
       - notEmpty on subject code input validation
-      - notEmpty on lecture name input validation 
+      - notEmpty on lecture name input validation
+
    c.  Study Plan Table
       - isNumeric and notEmpty on total_sks (well its actually better if automatically calculated) validation
       - notEmpty on supervisor input validation
